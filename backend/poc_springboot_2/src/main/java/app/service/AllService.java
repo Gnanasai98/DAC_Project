@@ -1,11 +1,10 @@
-package ar.person.service;
-
+package app.service;
 import java.util.List;
 
-import ar.person.model.Individual;
-import ar.person.model.IndividualStatus;
-import ar.person.model.Item;
-import ar.person.model.ItemStatus;
+import app.model.Individual;
+import app.model.IndividualStatus;
+import app.model.Item;
+import app.model.ItemStatus;
 
 
 public interface AllService {
@@ -22,15 +21,15 @@ public interface AllService {
 
 	List<Individual> getAllIndividuals();
 
-	IndividualStatus addUser(Individual user);
+	IndividualStatus addIndividual(Individual user);
 	
-	IndividualStatus getUserbyId(int itemNo);
+	IndividualStatus getIndividualbyId(int itemNo);
 	
 	//IndividualStatus updateItem(Individual item);
 	
 	//IndividualStatus removeItem(int itemno);
 		
-	IndividualStatus getAdminbyId(int itemNo);
+	List<Individual> getAllAdmin();
 	
 	
 

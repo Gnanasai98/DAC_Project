@@ -6,6 +6,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import ar.person.DAO.IndividualRepository;
 import ar.person.DAO.ItemRepository;
 import ar.person.model.Individual;
 import ar.person.model.IndividualStatus;
@@ -17,6 +18,9 @@ public class AllServiceImpletementation implements AllService{
 
 	@Autowired
 	private ItemRepository itemRepo;
+	
+	@Autowired
+	private IndividualRepository individualRepo;
 	
 	@Override
 	public ItemStatus addItem(Item item) {
@@ -65,5 +69,8 @@ public class AllServiceImpletementation implements AllService{
 		return itemRepo.findAll();
 	}
 
-	
+	@Override
+	public List<Individual> getAllIndividuals() {
+		return individualRepo.findAll();
+	}
 }

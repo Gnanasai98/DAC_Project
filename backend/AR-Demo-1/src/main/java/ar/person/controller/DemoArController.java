@@ -29,5 +29,4 @@ public class DemoArController {
 			re =new ResponseEntity<ItemStatus>(x,HttpStatus.OK);
 		return re;
 	}
-	
 }

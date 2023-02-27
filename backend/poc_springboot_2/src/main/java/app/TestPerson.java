@@ -1,19 +1,15 @@
-package ar.person;
+package app;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-
-import ar.person.controller.DemoArController;
-import ar.person.service.AllService;
 
 @SpringBootApplication
 public class TestPerson implements CommandLineRunner
 {
 	public static void main(String[] args) {
 		SpringApplication.run(TestPerson.class, args);
-
+		System.out.println(1);
 	}
 	@Override
 	public void run(String... args) throws Exception {
@@ -21,7 +17,7 @@ public class TestPerson implements CommandLineRunner
 		//SpringApplication.run(TestPerson.class, args);
 
 	}
-	@Autowired
-	private DemoArController controller;
+//	@Autowired
+//	private DemoArController controller;
 
 }
