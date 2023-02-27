@@ -8,12 +8,11 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
-import com.mysql.cj.x.protobuf.MysqlxCrud.Collection;
 
 
 @Repository
 public interface IndividualRepository extends JpaRepository<Individual, Integer>
 {
-//	 	@Query(" SELECT individual_Name, email, password FROM individual WHERE division = 2")
-//	    List<Individual> findByDepartmentId();
+	 	@Query(value = "FROM Individual WHERE division = :x")
+	    List<Individual> findByDepartmentId(@Param("x") int x);
 }

@@ -29,7 +29,7 @@ public interface AllService {
 	
 	//IndividualStatus removeItem(int itemno);
 		
-	List<Individual> getAllAdmin();
+	List<Individual> getAllAdmin(int division);
 	
 	
 

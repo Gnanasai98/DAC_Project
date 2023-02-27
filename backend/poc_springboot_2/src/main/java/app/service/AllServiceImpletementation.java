@@ -4,6 +4,7 @@ import app.model.*;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Service;
 
 import app.dao.IndividualRepository;
@@ -22,7 +23,7 @@ public class AllServiceImpletementation implements AllService{
 	@Override
 	public ItemStatus addItem(Item item) {
 		ItemStatus itemStatus = new ItemStatus(0, "emp not added", item);
-		if (!individualRepo.existsById(item.getItemID())) 
+		if (!itemRepo.existsById(item.getItemID())) 
 		{
 			itemRepo.save(item);
 			itemStatus.setStatusCode(1);
@@ -34,19 +35,29 @@ public class AllServiceImpletementation implements AllService{
 
 	@Override
 	public ItemStatus getItembyId(int itemNo) {
-
-		return null;
+		ItemStatus itemStatus = new ItemStatus(0, "emp not added",null);
+		if(itemRepo.existsById(itemNo)) {
+			itemStatus.setStatusCode(1);
+			itemStatus.setStatusMessage("Item Found");
+		}
+		return itemStatus;
 	}
 
 	@Override
 	public ItemStatus updateItem(Item item) {
-		// TODO Auto-generated method stub
-		return null;
+		ItemStatus itemStatus = new ItemStatus(0, "emp not added",null);
+		if(itemRepo.existsById(item.getItemID()))
+		{
+			itemRepo.save(item);
+			itemStatus.setStatusCode(1);
+			itemStatus.setStatusMessage("item updated");
+			
+		}
+		return itemStatus;
 	}
 
 	@Override
 	public ItemStatus removeItem(int itemno) {
-		// TODO Auto-generated method stub
 		return null;
 	}
 
@@ -80,11 +91,13 @@ public class AllServiceImpletementation implements AllService{
 		
 		return null;
 	}
-
+	
 	@Override
-	public List<Individual> getAllAdmin() {
+	public List<Individual> getAllAdmin(int division) {
 		// TODO Auto-generated method stub
-		return null;
+		return individualRepo.findByDepartmentId(division);
+		//return null;
+
 	}
 
 	

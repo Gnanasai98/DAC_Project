@@ -49,10 +49,11 @@ public class DemoArController {
 		IndividualStatus individualStatus = service.addIndividual(individual);
 		return individualStatus;
 	}
-	@GetMapping("/getalladmin")
-	public List<Individual> getAllAdmin(){
+	
+	@GetMapping("/getalladmin/{deptID}")
+	public List<Individual> getAllAdmin(@PathVariable int deptID){
 		
-		return service.getAllAdmin();
+		return service.getAllAdmin(deptID);
 		
 	}
 }
