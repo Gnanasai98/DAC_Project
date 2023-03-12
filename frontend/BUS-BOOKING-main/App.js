@@ -27,8 +27,9 @@ function App() {
                     
                    <Switch>
                    
-                    <Route path="/" exact component= {List}></Route>
-                      <Route path="/sign" component= {Sign}></Route>  
+                   
+                      <Route path="/" exact component={List}></Route>
+                      <Route path="/sign" element={<Sign></Sign>}></Route>  
                       
                       <Route path="/view"  component={View}></Route>  
                      
