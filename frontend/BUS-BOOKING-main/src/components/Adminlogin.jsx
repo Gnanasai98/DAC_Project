@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import NavigationBar from "../services/navbar";
 import Bookingservice from "../services/Bookingservice";
 
 class Adminlogin extends Component {
@@ -41,6 +42,7 @@ class Adminlogin extends Component {
   render() {
     return (
       <div>
+        <NavigationBar/>
         <div className="container">
           <div className="card col-md-6 offset-md-3 offset-md-3">
             <h3 className="text-centre">Admin Login</h3>

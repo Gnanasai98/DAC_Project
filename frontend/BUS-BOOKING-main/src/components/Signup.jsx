@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import NavigationBar from "../services/navbar";
 import Bookingservice from "../services/Bookingservice";
 
 class Signup extends Component {
@@ -32,12 +33,13 @@ class Signup extends Component {
       return;
     }
     Bookingservice.usersignup(user).then((res) => {
-      this.setState({ status: res.data });
-      window.alert(this.state.status);
-      this.state.status === "registered successfully" &&
-        this.props.history.push("/");
+      this.setState({ status: res.data }, () => {
+        window.alert(this.state.status);
+        this.state.status === "registered successfully" &&
+          this.props.history.push("/");
+      });
     });
-  };
+};
   changeStatusHandler = (event) => {
     this.setState({ status: event.target.value });
   };
@@ -55,6 +57,7 @@ class Signup extends Component {
   render() {
     return (
       <div>
+        <NavigationBar/>
         <div className="container">
           <div className="card col-md-6 offset-md-3 offset-md-3">
             <h3 className="text-centre">User Signup</h3>
