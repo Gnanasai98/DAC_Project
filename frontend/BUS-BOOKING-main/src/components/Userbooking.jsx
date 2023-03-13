@@ -8,7 +8,7 @@ class Userbooking extends Component {
             bookings:[]
         }
         this.deleteBooking = this.deleteBooking.bind(this);
-       //this.viewBooking =this.viewBooking.bind(this);
+      // this.viewBooking =this.viewBooking.bind(this);
         }
 
     componentDidMount(){
@@ -18,7 +18,7 @@ class Userbooking extends Component {
         });
     }
     deleteBooking(id){
-        Bookingservice.deleteBooking(id).then( res => {
+        Bookingservice.deleteBooking(id).then( (res) => {
             this.setState({bookings: this.state.bookings.filter(booking => booking.id !== id)});
         });
        
@@ -27,7 +27,7 @@ class Userbooking extends Component {
     getBookingById(id){
         this.props.history.push(`/view/${id}`);
 
-        //this.props.history.push(`/print`);
+        this.props.history.push(`/print`);
     }
     render() {
         return (

@@ -4,9 +4,10 @@ import '../App.css';
 
 class ViewBookingComponent extends Component {
     constructor(props){
-         super (props)
+         super (props);
              this.state={
                  id: this.props.match.params.id,
+                 
                  date: new Date().toLocaleString(),
                  bookings:{}
              }

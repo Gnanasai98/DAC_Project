@@ -22,7 +22,7 @@ class Homepage extends Component {
 
     render() {
         return (
-            <div class="btn-group-vertical">
+            <div className="btn-group-vertical">
 
                 <button className="btn btn-primary" onClick={this.Adminlogin}>Admin Login</button>
              <br></br> 
