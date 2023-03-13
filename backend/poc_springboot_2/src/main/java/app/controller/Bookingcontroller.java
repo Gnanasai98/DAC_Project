@@ -5,6 +5,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -30,7 +31,7 @@ public class Bookingcontroller {
 		return s.getall();
 				
 	}
-	@GetMapping("/getusernamebookings/{username}")   // this is for getting the user as the name
+	@GetMapping("/bookings/getusernamebookings/{username}")   // this is for getting the user as the name
 	public List<Bookings> getUserBookings(@PathVariable(name="username")String name)
 	{
 		return s.getBookingByUser(name);
@@ -59,8 +60,20 @@ public class Bookingcontroller {
 		public String usersignup(@RequestBody Users user) {
 				return s.usersignup(user);
 	}
+	@GetMapping("/bookings/getuserbyid/{id}")
+	public Bookings getBookingByID(@PathVariable(value ="id") Long id){
+		return s.getBookingByID(id);
+	}
+	@DeleteMapping("/bookings/delete/{id}")
+    public String deleteEmployee(@PathVariable(value ="id") Long id) {
+		System.out.println("delete id");
+
+        s.deleteBookingByID(id);
+        return "Success";
+    }
+	
 	@GetMapping("/bookings/search/{source}/{destination}")
 	public List<Busdetails> searching(@PathVariable(name="source") String source,@PathVariable(name="destination") String destination){
 		return s.search(source, destination);
-				}
+	}
 }
