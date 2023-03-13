@@ -15,6 +15,8 @@ public class Users {
 	String username;
 	@Column(name="password")
 	String password;
+	@Column(name="email")
+	String email;
 	public long getId() {
 		return id;
 	}
@@ -25,10 +27,11 @@ public class Users {
 		
 		// TODO Auto-generated constructor stub
 	}
-	public Users(String username, String password) {
+	public Users(String username, String password, String email) {
 		
 		this.username = username;
 		this.password = password;
+		this.email = email;
 	}
 	@Override
 	public String toString() {
@@ -37,9 +40,12 @@ public class Users {
 		builder.append(username);
 		builder.append(", password=");
 		builder.append(password);
+		builder.append(", email=");
+		builder.append(email);
 		builder.append("]");
 		return builder.toString();
 	}
+	
 	public String getUsername() {
 		return username;
 	}
@@ -51,6 +57,12 @@ public class Users {
 	}
 	public void setPassword(String password) {
 		this.password = password;
+	}
+	public String getEmail() {
+		return email;
+	}
+	public void setEmail(String email) {
+		this.email = email;
 	}
 
 }
