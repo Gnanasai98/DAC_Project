@@ -37,12 +37,12 @@ class Bookingservice {
         return axios.get(BOOKINGS_API_BASE_URL+'/getusernamebookings/'+username);
     }
     deleteBooking(bookingId){
-        return axios.delete(BOOKINGS_API_BASE_URL+'/delete/' +bookingId);
+        return axios.delete(BOOKINGS_API_BASE_URL+'/' +bookingId);
     }
   
 
     getBookingById(bookingid){
-        return axios.get(BOOKINGS_API_BASE_URL + '/getuserbyid/' +bookingid);
+        return axios.get(BOOKINGS_API_BASE_URL + '/' +bookingid);
     }
 
 

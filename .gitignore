@@ -90,8 +90,6 @@ Thumbs.db
 *.exe
 *.o
 *.so
-/src/main/resources/application.properties
-
 
 # ignore packaged files
 *.7z
@@ -119,4 +117,3 @@ Thumbs.db
 !.gitignore
 !.nvmrc
 !.phpcs.xml.dist
-backend/poc_springboot_2/src/main/resources/application.properties

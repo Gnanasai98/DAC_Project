@@ -12,6 +12,5 @@ public interface Bookinginterface {
 	String usersignup(Users user);
 	List<Busdetails> search(String s,String d);
 	List<Bookings> getBookingByUser(String name);
-	Bookings getBookingByID(Long id);
-	void deleteBookingByID(Long id);
+
 }

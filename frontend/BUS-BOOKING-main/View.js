@@ -15,10 +15,9 @@ class View extends Component {
 
     componentDidMount(){
 
-        // Bookingservice.getboobyid(this.state.id).then((res) => {
-        //     this.setState({user: res.data});
-        // });
-        Bookingservice.getBookingById(this.state.id).then((res)=>{this.setState({user: res.data})});
+        Bookingservice.getuserbyid(this.state.id).then((res) => {
+            this.setState({user: res.data});
+        });
     }
 
     render() {
