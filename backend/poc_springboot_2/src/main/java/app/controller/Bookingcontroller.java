@@ -30,6 +30,12 @@ public class Bookingcontroller {
 		return s.getall();
 				
 	}
+	@GetMapping("/getusernamebookings/{username}")   // this is for getting the user as the name
+	public List<Bookings> getUserBookings(@PathVariable(name="username")String name)
+	{
+		return s.getBookingByUser(name);
+				
+	}
 	@PostMapping("/bookings")
 	public String plantravel(@RequestBody Bookings boo)
 	{

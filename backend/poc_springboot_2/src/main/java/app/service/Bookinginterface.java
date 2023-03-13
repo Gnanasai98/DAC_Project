@@ -11,5 +11,6 @@ public interface Bookinginterface {
 	String userlogin(String username,String password);
 	String usersignup(Users user);
 	List<Busdetails> search(String s,String d);
+	List<Bookings> getBookingByUser(String name);
 
 }

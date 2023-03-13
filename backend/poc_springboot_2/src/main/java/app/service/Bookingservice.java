@@ -93,4 +93,10 @@ public class Bookingservice implements Bookinginterface{
 		return v.search(s, d);
 	}
 
+	@Override
+	public List<Bookings> getBookingByUser(String name) {
+		
+		return b.search(name);
+	}
+
 }

@@ -22,9 +22,9 @@ class ViewBookingComponent extends Component {
                  this.setState({bookings: res.data});
              });
          }
-        //  print(){
-        //     this.props.history.push('/print');
-        //  }
+         print(){
+            this.props.history.push('/print');
+         }
         
     render() {
         return (
