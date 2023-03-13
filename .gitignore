@@ -90,6 +90,7 @@ Thumbs.db
 *.exe
 *.o
 *.so
+application.properties
 
 # ignore packaged files
 *.7z
