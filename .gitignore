@@ -120,3 +120,4 @@ Thumbs.db
 !.nvmrc
 !.phpcs.xml.dist
 backend/poc_springboot_2/src/main/resources/application.properties
+

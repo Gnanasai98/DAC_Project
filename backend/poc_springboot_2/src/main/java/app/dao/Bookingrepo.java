@@ -19,7 +19,7 @@ public interface Bookingrepo extends JpaRepository<Bookings, Integer> {
 	public Bookings getBookingByID(@Param("abc") Long id);
 	
 	 @Modifying
-	    @Transactional
+	 @Transactional
 	@Query("delete from Bookings where id = :abc")
 	void deleteBookingByID(@Param("abc") Long id);
 	
