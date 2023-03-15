@@ -30,7 +30,6 @@ class Afterlogin extends Component {
     
     render() {
         return (
-            <div class="btn-group-vertical">
 
              <button className="btn btn-primary" onClick={this.bookings}>All bookings</button>
 
