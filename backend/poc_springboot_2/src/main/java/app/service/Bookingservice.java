@@ -99,16 +99,4 @@ public class Bookingservice implements Bookinginterface{
 		return b.search(name);
 	}
 
-	@Override
-	public Bookings getBookingByID(Long id) {
-		return b.getBookingByID(id);
-	}
-
-	@Override
-	public void deleteBookingByID(Long id) {
-		// TODO Auto-generated method stub
-		Integer intId = id.intValue(); 
-		b.deleteBookingByID(id);
-	}
-
 }

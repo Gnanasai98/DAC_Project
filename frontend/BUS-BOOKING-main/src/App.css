@@ -46,3 +46,66 @@
   text-align: center;
   color: white;
 }
+.homepage-container {
+  position: relative;
+}
+
+#bg-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+
+.btn-group-vertical {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* .center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+} */
+
+.homepage-container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.navbar {
+  position: inherit;
+  display: inline-flex;
+  left: 365px;
+  width: 37%;
+  z-index: 9999;
+  top: -282px;
+}
+
+/* .bg-image {
+  background-image: url('/src/components/login1.jpg');
+  background-size: cover;
+  background-position: center;
+  } */
+
+  /* .card {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    max-width: 500px;
+    
+  } */
+
+
