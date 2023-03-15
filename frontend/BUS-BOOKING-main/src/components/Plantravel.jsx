@@ -92,7 +92,7 @@ changeBuscodeHandler = (event) => {
                                 <div>
                     <h2 className="text-center">Bus list</h2>
                     <div className="row">
-                    <table style={{marginLeft: "50px"}} className="table table-striped table-bordered">
+                    <table style={{marginLeft: "10px"}} className="table table-striped table-bordered">
                         <thead>
                             <tr>
                                 <th>buscode</th>
@@ -100,6 +100,7 @@ changeBuscodeHandler = (event) => {
                                 <th>destination</th>
                                 <th>time</th>
                                 <th>price</th>
+                                <th>select</th>
                             
                             </tr>
 
@@ -116,7 +117,12 @@ changeBuscodeHandler = (event) => {
                                         <td> {bus.destination} </td>
                                         <td> {bus.time} </td>
                                         <td> {bus.price} </td>
-                                       
+                                        <td>
+                                             <div className="form-check">
+                                                <input type="radio" name="buscode" value={bus.code.toString()} checked={this.state.buscode === bus.code.toString()} onChange={this.changeBuscodeHandler} />
+                                                 <label className="form-check-label">{bus.code}</label>
+                                             </div>
+                                       </td>
 
 
                                     </tr>
@@ -136,7 +142,7 @@ changeBuscodeHandler = (event) => {
                                 </div>
                                 <div className="form-group">
                                 <label>Date</label>
-                                <input placeholder="date" name="date" className="form-control" 
+                                <input type="date" className="form-control" 
                                                 value={this.state.date} onChange={this.changeDateHandler}/>
 
                                 </div>
@@ -146,12 +152,7 @@ changeBuscodeHandler = (event) => {
                                                 value={this.state.noofpassengers} onChange={this.changePassengersHandler}/>
 
                                 </div>
-                                <div className="form-group">
-                                <label>buscode</label>
-                                <input placeholder="buscode" name="buscode" className="form-control" 
-                                                value={this.state.buscode} onChange={this.changeBuscodeHandler}/>
-
-                                </div>
+                                
                                 <button className="btn btn-success" onClick={this.savetravel}>Submit</button>
                                         <button className="btn btn-danger" onClick={this.cancel.bind(this)} style={{marginLeft: "10px"}}>Cancel</button>
 
