@@ -27,7 +27,7 @@ class Userbooking extends Component {
     getBookingById(id){
         this.props.history.push(`/view/${id}`);
 
-        //this.props.history.push(`/print`);
+        this.props.history.push(`/print`);
     }
     render() {
         return (

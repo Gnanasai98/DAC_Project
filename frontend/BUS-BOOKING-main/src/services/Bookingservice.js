@@ -20,10 +20,6 @@ class Bookingservice {
     {
         return axios.post(BOOKINGS_API_BASE_URL+'/addbus',booking);
     }
-    buslist(booking)
-    {
-        return axios.post(BOOKINGS_API_BASE_URL+'/buslist',booking);
-    }
     userlogin(username,password){
         return axios.get(BOOKINGS_API_BASE_URL+'/userlogin/'+username+'/'+password);
     }

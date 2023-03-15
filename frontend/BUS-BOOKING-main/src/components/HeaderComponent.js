@@ -13,8 +13,8 @@ class HeaderComponent extends Component {
         return (
             <div>
                 <header>
-                    <nav className="navbar navbar-expand-md navbar-dark bg-dark">
-                    <div><a href="https://javaguides.net" className="navbar-brand">Bus booking  App</a></div>
+                <nav className="navbar navbar-expand-md navbar-dark bg-transparent flex-row" style={{ marginRight: '20px', top:'-5px', left:'380px'}}>
+                <div><a href="https://javaguides.net" className="navbar-brand" style={{ fontSize: '44px' }}>Bus Travel Ticketing System</a></div>
                     </nav>
                 </header>
             </div>
