@@ -13,7 +13,7 @@ import Signup from './components/Signup';
 import Afteruserlogin from './components/Afteruserlogin';
 import Userbooking from './components/Userbooking';
 import ViewBookingComponent from './components/ViewBookingComponent';
-
+import About from './components/About';
 function App() {
   return (
     <div className="container">
@@ -34,7 +34,7 @@ function App() {
                        <Route path="/afteruserlogin" component= {Afteruserlogin}></Route>
                        <Route path="/mybookings" component= {Userbooking}></Route>
                        <Route path = "/view/:id" component = {ViewBookingComponent}></Route>
-
+                       <Route path = "/aboutus" component={About}></Route>
 
                      </Switch>
                    </div>

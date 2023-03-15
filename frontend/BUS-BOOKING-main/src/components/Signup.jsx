@@ -1,7 +1,6 @@
 import React, { Component } from "react";
-import NavigationBar from "../services/navbar";
 import Bookingservice from "../services/Bookingservice";
-
+import backgroundImage2 from "../components/signup1.jpg";
 class Signup extends Component {
   constructor(props) {
     super(props);
@@ -33,13 +32,12 @@ class Signup extends Component {
       return;
     }
     Bookingservice.usersignup(user).then((res) => {
-      this.setState({ status: res.data }, () => {
-        window.alert(this.state.status);
-        this.state.status === "registered successfully" &&
-          this.props.history.push("/");
-      });
+      this.setState({ status: res.data });
+      window.alert(this.state.status);
+      this.state.status === "registered successfully" &&
+        this.props.history.push("/");
     });
-};
+  };
   changeStatusHandler = (event) => {
     this.setState({ status: event.target.value });
   };
@@ -57,9 +55,24 @@ class Signup extends Component {
   render() {
     return (
       <div>
-        <NavigationBar/>
-        <div className="container">
-          <div className="card col-md-6 offset-md-3 offset-md-3">
+
+<div style={{ height: "100vh", overflow: "hidden" }}>
+        <img
+          src={backgroundImage2}
+          alt="background"
+          style={{
+            position: "absolute",
+            top: 0,
+            left: 0,
+            width: "100%",
+            height: "100%",
+            objectFit: "cover",
+            filter: "brightness(50%)",
+          }}
+        />
+           <div className="card col-md-6" style={{ position: "absolute", top: "48%", left: "48%", 
+        transform: "translate(-50%, -50%)", background: "transparent", backgroundClip: "inherit", maxWidth: "30%", border:"none" }}
+        >
             <h3 className="text-centre">User Signup</h3>
             <div className="card-body">
               <form>
