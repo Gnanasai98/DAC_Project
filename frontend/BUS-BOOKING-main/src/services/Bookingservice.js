@@ -7,7 +7,7 @@ class Bookingservice {
     {
         return axios.get(BOOKINGS_API_BASE_URL);   
     }
-
+    
     plan(booking)
     {
         return axios.post(BOOKINGS_API_BASE_URL,booking);
@@ -35,7 +35,9 @@ class Bookingservice {
     deleteBooking(bookingId){
         return axios.delete(BOOKINGS_API_BASE_URL+'/delete/' +bookingId);
     }
-  
+    getAvailableSeats(buscode){
+        return axios.get(BOOKINGS_API_BASE_URL+'/getAvailableSeats/'+buscode);
+    }
 
     getBookingById(bookingid){
         return axios.get(BOOKINGS_API_BASE_URL + '/getuserbyid/' +bookingid);

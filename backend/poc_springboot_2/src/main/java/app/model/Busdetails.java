@@ -5,6 +5,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Transient;
 
 @Entity
 public class Busdetails {
@@ -21,6 +22,8 @@ public class Busdetails {
 	String time;
 	@Column(name="price")
 	int price;
+	
+	
 	public int getPrice() {
 		return price;
 	}
@@ -37,7 +40,7 @@ public class Busdetails {
 		
 		// TODO Auto-generated constructor stub
 	}
-	public Busdetails(long id, int code, String source, String destination, String time, int price) {
+	public Busdetails(long id, int code, String source, String destination, String time, int price,int totalSeats) {
 		super();
 		this.id = id;
 		this.code = code;

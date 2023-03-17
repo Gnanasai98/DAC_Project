@@ -14,4 +14,5 @@ public interface Bookinginterface {
 	List<Bookings> getBookingByUser(String name);
 	Bookings getBookingByID(Long id);
 	void deleteBookingByID(Long id);
+//	int getallbyAvailableSeats(int d) ;
 }

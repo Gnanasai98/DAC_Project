@@ -3,6 +3,7 @@ package app.controller;
 
 import java.util.List;
 
+import org.aspectj.weaver.ast.Var;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -31,6 +32,11 @@ public class Bookingcontroller {
 		return s.getall();
 				
 	}
+//	@PutMapping("/booking/getAvailableSeats/{buscode}")
+//	public int getWithAvailableSeat(@PathVariable(name="buscode") int busCode){
+//		return s.getallbyAvailableSeats(busCode);
+//		
+//	}
 	@GetMapping("/bookings/getusernamebookings/{username}")   // this is for getting the user as the name
 	public List<Bookings> getUserBookings(@PathVariable(name="username")String name)
 	{
@@ -76,4 +82,6 @@ public class Bookingcontroller {
 	public List<Busdetails> searching(@PathVariable(name="source") String source,@PathVariable(name="destination") String destination){
 		return s.search(source, destination);
 	}
+	
+	
 }

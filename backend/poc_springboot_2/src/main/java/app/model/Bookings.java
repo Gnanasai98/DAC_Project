@@ -2,10 +2,16 @@ package app.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import javax.persistence.Transient;
+
+import org.springframework.web.bind.annotation.InitBinder;
 
 @Entity
 @Table(name ="Bookings")
@@ -27,9 +33,31 @@ public class Bookings {
 	int noofpassengers;
 	@Column(name="buscode")
 	int buscode;
+	@Column(name="availableSeats")
+	int availableSeats;
+	
+//	@ManyToOne(fetch = FetchType.LAZY)
+//    @JoinColumn(name = "busdetail", referencedColumnName = "code")
+//	Busdetails busDetails;
+	
+//	@Column(name="Seat_no")
+//	@GeneratedValue(strategy = GenerationType.IDENTITY)
+//	int seatNo;
 	public Bookings() {
 		
-		// TODO Auto-generated constructor stub
+	}
+//	public int getSeatNo() {
+//		return seatNo;
+//	}
+//	public void setSeatNo(int seatNo) {
+//		this.seatNo = seatNo;
+//	}
+	public int getAvailableseats() {
+		return availableSeats;
+	}
+
+	public void setAvailableseats(int availableseats) {
+		this.availableSeats = availableseats;
 	}
 	public long getId() {
 		return id;
@@ -73,6 +101,12 @@ public class Bookings {
 	public void setBuscode(int buscode) {
 		this.buscode = buscode;
 	}
+//	public Busdetails getBusDetails() {
+//		return busDetails;
+//	}
+//	public void setBusDetails(Busdetails busDetails) {
+//		this.busDetails = busDetails;
+//	}
 	@Override
 	public String toString() {
 		StringBuilder builder = new StringBuilder();
@@ -91,7 +125,7 @@ public class Bookings {
 		builder.append("]");
 		return builder.toString();
 	}
-	public Bookings(String username, String source, String destination, String date, int noofpassengers, int buscode) {
+	public Bookings(String username, String source, String destination, String date, int noofpassengers, int buscode,int seatNo,Busdetails busdetails,int availableseats) {
 		super();
 		this.username = username;
 		this.source = source;
@@ -99,6 +133,9 @@ public class Bookings {
 		this.date = date;
 		this.noofpassengers = noofpassengers;
 		this.buscode = buscode;
+		this.availableSeats=availableseats;
+//		this.seatNo=seatNo;
+//		this.busDetails=busdetails;
 	}
 	
 

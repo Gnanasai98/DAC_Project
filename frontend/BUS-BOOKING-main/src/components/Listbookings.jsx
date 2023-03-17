@@ -15,7 +15,12 @@ class Listbookings extends Component {
             this.setState({bookings: res.data});
         });
     }
-
+    // getAllBooking(buscode){
+    //     Bookingservice.getAvailableSeats(buscode).then( res => {
+    //         this.setState({bookings.noofseats: res.data.availableseats});
+    //     });
+       
+   
     render() {
         return (
             <div>

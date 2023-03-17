@@ -22,7 +22,11 @@ public class Bookingservice implements Bookinginterface{
 		// TODO Auto-generated method stub
 		return b.findAll();
 	}
-
+//	@Override
+//	public int getallbyAvailableSeats(int d) {
+//		// TODO Auto-generated method stub
+//		return b.updateAvailableSeatsByBuscode(d);
+//	}
 	@Override
 	public String plantravel(Bookings boo) {
 		// TODO Auto-generated method stub
@@ -111,4 +115,5 @@ public class Bookingservice implements Bookinginterface{
 		b.deleteBookingByID(id);
 	}
 
+	
 }

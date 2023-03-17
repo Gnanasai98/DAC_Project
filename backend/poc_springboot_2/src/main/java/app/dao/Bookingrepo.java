@@ -22,5 +22,18 @@ public interface Bookingrepo extends JpaRepository<Bookings, Integer> {
 	 @Transactional
 	@Query("delete from Bookings where id = :abc")
 	void deleteBookingByID(@Param("abc") Long id);
-	
+	 
+//	 @Query("select id,buscode,date,destination,noofpassengers,source,username,30-(select count(buscode) from Bookings where buscode=:def)as availableseats from Bookings;")
+//	public List<Bookings> getAllBusDetails(@Param("def") int d);
+
+	// @Query("SELECT id, buscode, date, destination, noofpassengers, source, username, (30 - (SELECT COUNT(buscode) FROM Bookings WHERE buscode=:def)) AS availableseats FROM Bookings")
+//	 public List<Bookings> getAllBusDetails(@Param("def") int d);
+//	
+//	@Modifying
+//	@Transactional
+//    @Query("UPDATE Bookings b SET b.availableSeats = " +
+//           "b.noofpassengers-(SELECT COUNT(*) FROM Bookings WHERE buscode = :buscode) " +
+//           "WHERE b.buscode = :buscode")
+//    int updateAvailableSeatsByBuscode(int buscode);
+
 }

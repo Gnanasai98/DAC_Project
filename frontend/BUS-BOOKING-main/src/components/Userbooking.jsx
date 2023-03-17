@@ -27,10 +27,11 @@ class Userbooking extends Component {
     getBookingById(id){
         this.props.history.push(`/view/${id}`);
 
-        this.props.history.push(`/print`);
+      //  this.props.history.push(`/print`);
     }
     render() {
         return (
+           
             <div>
                     <h2 className="text-center">Booking list</h2>
                     <div className="row">
@@ -43,6 +44,7 @@ class Userbooking extends Component {
                                 <th>date</th>
                                 <th>noofpassengers</th>
                                 <th>bus</th>
+                                <th>SeatNo</th>
                                 <th>Actions</th>
                             </tr>
                             
@@ -60,8 +62,8 @@ class Userbooking extends Component {
                                         <td> {bookings.date} </td>
                                         <td> {bookings.noofpassengers} </td>
                                         <td> {bookings.buscode} </td>
+                                        <td>{bookings.seatno}</td>
                                         <td>
-                                            
                                                  <button style={{marginLeft: "10px"}} onClick={ () => this.deleteBooking(bookings.id)} className="btn btn-danger">Delete </button>
                                                  <button style={{marginLeft: "10px"}} onClick={ () => this.getBookingById(bookings.id)} className="btn btn-info">View </button>
                                              </td>
@@ -72,6 +74,7 @@ class Userbooking extends Component {
                     </table>
                     </div>
             </div>
+           
         );
     }
 }
